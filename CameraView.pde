@@ -102,7 +102,7 @@ void draw() {
   KyUI.getRoot().invalidate();
   image(webcam, width/2, height/2);
   KyUI.render(g);
-  if (webcam.width!=0&&webcam.height!=0&&width!=webcam.width) {
+  if (webcam.width!=0&&webcam.height!=0&&(width!=webcam.width||height!=webcam.height)) {
     println("resize to "+webcam.width+" "+webcam.height);
     surface.setSize(webcam.width, webcam.height);
     surface.setLocation(displayWidth-width, displayHeight-height);
